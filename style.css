@@ -106,8 +106,8 @@ nav {
 }
 
 .hero-img img {
-  width: 380px;
-  border-radius: 20px;
+  width: 180px;
+  border-radius: 80px;
   box-shadow: 0 4px 15px rgba(196, 150, 150, 0.5);
 }
 
