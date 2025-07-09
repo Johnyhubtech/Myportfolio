@@ -26,6 +26,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -38,6 +39,17 @@ nav {
   color: #fbc02d;
 }
 
+/* Hamburger Button (hidden by default) */
+#menu-toggle {
+  display: none;
+  font-size: 28px;
+  background: none;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+/* Nav Links */
 .nav-links {
   list-style: none;
   display: flex;
@@ -245,6 +257,41 @@ footer {
 
 /* Responsive – Mobile Fix */
 @media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .logo {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+
+  #menu-toggle {
+    display: block;
+    margin-left: auto;
+    padding: 10px;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    display: none;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-links a {
+    padding: 10px 0;
+    border-bottom: 1px solid #333;
+    width: 100%;
+  }
+
   .hero-content {
     flex-direction: column;
     align-items: center;
