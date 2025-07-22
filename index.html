@@ -21,7 +21,7 @@
     </nav>
   </header>
  <div class="hero-img">
-        <img src="images/jogn.png" alt="Johny's Photo">
+        <img src="images/stu1.png" alt="Johny's Photo">
       </div>
   <section id="hero">
     <div class="hero-content">
@@ -65,6 +65,33 @@
       </div>
     </div>
   </section>
+  <section id="client-portfolios">
+  <h2>Client Portfolios</h2>
+  <p>Here are some of the websites and portfolios I've designed for others:</p>
+
+  <div class="portfolio-grid">
+    <div class="portfolio-item">
+      <img src="images/portfolio1.png" alt="Client Project 1">
+      <h3>Anuri Group of Schools</h3>
+      <a href="https://johnyhubtech.github.io/AnuriGroupofschool/" target="_blank">Visit Site</a>
+    </div>
+
+    <div class="portfolio-item">
+      <img src="images/portfolio2.png" alt="Client Project 2">
+      <h3>Chisom Emmanuel</h3>
+      <a href="https://johnyhubtech.github.io/ChisomPortfolio/" target="_blank">Visit Site</a>
+    </div>
+
+    <div class="portfolio-item">
+      <img src="images/portfolio3.png" alt="Client Project 3">
+      <h3>Queen's Fashion Store</h3>
+      <a href="https://johnyhubtech.github.io/QueensFashion/" target="_blank">Visit Site</a>
+    </div>
+    
+    <!-- Add more client works as needed -->
+  </div>
+</section>
+
 
   <section id="projects">
     <h2>Featured Projects</h2>
@@ -103,7 +130,7 @@
   <section id="resume">
     <h2>Download My Resume</h2>
     <p>If you'd like a copy of my resume, feel free to grab it below.</p>
-    <a href="resume/JOHNYGIFTRESUME.pdf" class="btn" download>📄 Download Resume</a>
+    <a href="resume/Johny_Gift_Resume.pdf" class="btn" download>📄 Download Resume</a>
   </section>
 
   <section id="contact">
@@ -123,5 +150,24 @@
     navLinks.classList.toggle('show');
   });
 </script>
+
+<script>
+  // CountAPI (unique namespace and key)
+  const countApiUrl = "https://api.countapi.xyz/update/johnycode/portfolio?amount=1";
+  const getCountUrl = "https://api.countapi.xyz/get/johnycode/portfolio";
+
+  // Update counter
+  fetch(countApiUrl)
+    .then(() => fetch(getCountUrl))
+    .then(res => res.json())
+    .then(data => {
+      document.getElementById("visit-count").textContent = data.value;
+    })
+    .catch(err => {
+      document.getElementById("visit-count").textContent = "Unavailable";
+      console.error("Visitor counter failed:", err);
+    });
+</script>
+
 </body>
 </html>
